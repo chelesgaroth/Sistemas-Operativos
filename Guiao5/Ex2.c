@@ -30,7 +30,10 @@ int main(int argc, char const *argv[]) {
         // Temos extremidade de escrita do pipe.
         char * str = "teste\n";
         // sleep(5);
-        for(size_t i = 0; i < 3; i++) write(pipe_fd[1], str, strlen(str) + 1);
+        for(size_t i = 0; i < 3; i++){ 
+		write(pipe_fd[1], str, strlen(str) + 1);
+		puts("olha outro");
+	}
         // comunicação pai -> filho
 
         close(pipe_fd[1]);
